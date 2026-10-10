@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+import 'package:google_map_app/part1_info_gestures/info_windows_screen.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Flutter + Google Maps Class')),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+        children: const [
+          _SetupNote(),
+          _SectionTitle('Part 1 - Info Windows, Gestures'),
+          _DemoButton(label: 'Info Windows', screen: InfoWindowsScreen()),
+        ],
+      ),
+    );
+  }
+}
+
+class _DemoButton extends StatelessWidget {
+  const _DemoButton({required this.label, required this.screen});
+
+  final String label;
+  final Widget screen;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: ElevatedButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => screen),
+        ),
+        child: Text(label),
+      ),
+    );
+  }
+}
+
+// _SetupNote এবং _SectionTitle আপনার আগের কোডের মতোই থাকবে
+
+class _SetupNote extends StatelessWidget {
+  const _SetupNote();
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.teal.shade50,
+      child: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Text(
+          'New to maps? Open Part 3 first - it builds the map the other parts '
+              'decorate.\n\n'
+              'A gray square means the API key is still the placeholder. Replace '
+              'YOUR_GOOGLE_MAPS_API_KEY, then stop the app and run it again.',
+          style: TextStyle(fontSize: 13),
+        ),
+      ),
+    );
+  }
+}
+
+class _SectionTitle extends StatelessWidget {
+  const _SectionTitle(this.title);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 24, bottom: 8),
+      child: Text(
+        title,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+}
