@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_map_app/part1_info_gestures/home_screen.dart';
+
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
