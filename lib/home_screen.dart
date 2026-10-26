@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_map_app/part1_info_gestures/gps_screen.dart';
 import 'package:google_map_app/part1_info_gestures/info_windows_screen.dart';
 import 'package:google_map_app/part1_info_gestures/map_gestures_screen.dart';
+import 'package:google_map_app/part2_permission_realtime/permission_screen.dart';
+import 'package:google_map_app/part3_maps_markers_polylines/custom_marker_screen.dart';
+import 'package:google_map_app/part3_maps_markers_polylines/polylines_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,6 +21,13 @@ class HomeScreen extends StatelessWidget {
           _DemoButton(label: 'Info Windows', screen: InfoWindowsScreen()),
           _DemoButton(label: 'Map Gestures', screen: MapGesturesScreen()),
           _DemoButton(label: 'GPS', screen: GpsScreen()),
+          _SectionTitle('Part2 - Permission  Realtime'),
+          _DemoButton(label: 'Permission', screen: PermissionScreen()),
+          _SectionTitle('Google Maps'),
+          _DemoButton(label: 'Polylines', screen: PolylinesScreen()),
+          _DemoButton(label: 'Custom Marker', screen: CustomMarkerScreen()),
+
+          
         ],
       ),
     );
