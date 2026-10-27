@@ -132,12 +132,10 @@ class _LiveTrackingScreenState extends State<LiveTrackingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Real-Time Location Tracker')),
-      body: _currentLatLng == null
-          ? const Center(child: CircularProgressIndicator())
-          : GoogleMap(
-        initialCameraPosition: CameraPosition(
-          target: _currentLatLng!,
-          zoom: 16,
+      body: GoogleMap(
+        initialCameraPosition: const CameraPosition(
+          target: LatLng(23.8103, 90.4125), // Dhaka, শুধু শুরুর পজিশন
+          zoom: 10,
         ),
         markers: _markers,
         polylines: _polylines,
