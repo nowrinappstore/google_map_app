@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_map_app/live_tracking_screen.dart';
 import 'package:google_map_app/part1_info_gestures/gps_screen.dart';
 import 'package:google_map_app/part1_info_gestures/info_windows_screen.dart';
 import 'package:google_map_app/part1_info_gestures/map_gestures_screen.dart';
@@ -26,6 +27,8 @@ class HomeScreen extends StatelessWidget {
           _SectionTitle('Google Maps'),
           _DemoButton(label: 'Polylines', screen: PolylinesScreen()),
           _DemoButton(label: 'Custom Marker', screen: CustomMarkerScreen()),
+          _SectionTitle('Live Tracking'),
+          _DemoButton(label: 'Live Tracking Screen', screen: LiveTrackingScreen())
 
           
         ],
